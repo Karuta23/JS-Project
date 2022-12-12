@@ -6,10 +6,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Kvíz</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container bg-dark">
-        a
+
+<body class="bg-light bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Kvíz</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link disabled">Disabled</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="container pt-5 pb-5">
+        <h1>Kvíz</h1>
+        <p>Vítejte v js aplikaci o kvízu</p>
+        <div id="root"></div>
+        
+        <div class="row mb-5">
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o historii
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o politice
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o historii
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o historii
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o politice
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o historii
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-3">
+            <a href="" class="okruhy-link">
+              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
+                <div class="card-body">
+                  Otázky o historii
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+
+        <p id="test2"></p>
+      
+        <button class="btn btn-dark" onclick="loadA()">AAAAAAAAAAAa</button>
+
     </div>
+
+    <script>
+      function loadA(){
+        $.ajax({
+        url: "getOkruhy.php",
+        }).done(function(data) {
+          $("#test2").append(data);
+        });
+      }
+
+      
+    </script>
+
+
 </body>
 </html>

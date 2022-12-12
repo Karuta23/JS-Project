@@ -1,0 +1,13 @@
+.okruhy {
+    transition: 1s;
+    text-align: center;
+}
+
+.okruhy:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.okruhy-link{
+    text-decoration: none;
+}

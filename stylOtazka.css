@@ -1,0 +1,400 @@
+
+
+
+* {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+div.wallpaper {
+	position: fixed;
+	width: 1920px;
+	height: 1080px;
+	z-index: -5;
+	top: 0;
+	left: 0;
+
+}
+
+
+div.wallpaper img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+
+}
+div#header {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(191, 191, 191, 0.6);
+	box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+
+div#header * {
+	text-align: center;
+	color: #0088cc;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: bold;
+}
+
+
+div#con {
+	width: 20%;
+	position: relative;
+	height: auto;
+	margin: auto;
+	margin-top: 250px;
+	opacity: 1;
+	transition: 1s;
+	background-color: rgba(191, 191, 191, 0.6);
+	box-shadow: 0 4px 2px 1px rgba(0, 0, 0, 0.2), 0 4px 2px 1px rgba(0, 0, 0, 0.2);
+	max-height: 1000px;
+	transition: height 1s, 1s;
+}
+
+div#headerQ {
+	background-color: rgba(0, 134, 179, 0.6);
+	position: relative;
+	width: 100%;
+	display: none;
+	color: white;
+	transition: height 1s, 1s;
+
+
+}
+
+
+div#headerQ * {
+	opacity: 1;
+	padding: 10px;
+	font-weight: bold;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	transition: 0.5s;
+	display: inline-block;
+	margin: 0;
+
+}
+
+div.otazky {
+	padding: 30px;
+	transition: 0.5s;
+	opacity: 1;
+	transition: 0.5s;
+	
+}
+
+div.otazky * {
+	display: inline-block;
+}
+
+
+span#otazka {
+	position: relative;
+	display: inline-block;
+	margin-top: 0;
+}
+
+label.conA {
+	display: block;
+	position: relative;
+	padding: 5px;
+	margin: auto;
+	cursor: pointer;
+	margin-top: 20px;
+	transition: 0.5s;
+}
+
+label.conA input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+label.conA span.uRadio{
+	position: absolute;
+	width: 100%;
+	height: auto;
+	top: 0;
+	left: 0;
+	transition: 0.5s;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+input[type=number] {
+	border: none;
+	background-color: rgba(0, 136, 204, 0.7);
+	padding: 5px;
+	color: white;
+
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  background-color: rgba(0, 136, 204, 1);
+}
+
+label.conA span.uRadio span.Answer {
+	margin-left: 20px;
+}
+
+label.conA:hover input ~ span.uRadio {
+  background-color: rgba(102, 204, 255, 0.7);
+}
+
+label.conA input:checked ~ span.uRadio {
+  background-color: rgba(0, 136, 204, 0.7);
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+button {
+	position: relative;
+	margin-top: 40px;
+	text-decoration: none;
+	display: inline-block;
+	border: none;
+	padding: 4px;
+	background-color: rgb(51, 187, 255);
+	color: white;
+	text-align: center;
+	box-shadow: 0 3px 2px 1px rgba(0, 0, 0, 0.2), 0 3px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	transition: 0.4s;
+}
+
+button:hover {
+	background-color: rgb(0, 136, 204);
+
+}
+
+button:active {
+	background-color: rgb(0, 136, 204);
+	box-shadow: none;
+	transform: translateY(4px);
+}
+
+
+
+div#ProgressBar {
+	position: relative;
+	display: inline-block;
+	width: 80%;
+	height: 100%;
+	background-color: rgb(255, 255, 255);
+	margin-left: 30px;
+
+
+}
+
+div#Progress {
+	position: relative;
+	height: 100%;
+	width: 0;
+	top: 0;
+	left: 0;
+	background-color: rgb(153, 255, 102);
+}
+
+
+div#S {
+	position: relative;
+	width: auto;
+	height: auto;
+	margin: auto;
+	padding: 20px;
+	top: 0;
+	transition: 1s;
+
+}
+
+div#S * {
+	display: inline-flex;
+	margin: 20px;
+	
+}
+
+div#S span {
+	margin: auto;
+}
+
+div#S button {
+	position: relative;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+div#Fin {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	padding-top: 20px;
+	transition: 1s;
+
+}
+
+div#ScoreBar {
+	display: block;
+	position: relative;
+	width: 80%;
+	height: auto;
+	margin: auto;
+	border: 3px groove white;
+	background-color: rgba(242, 242, 242, 0.4);
+	margin-top: 5px;
+	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+	
+}
+
+div#maxmin {
+	display: flex;
+	position: relative;
+	width: 90%;
+	height: auto;
+	margin: auto;
+	margin-top: 20px;
+}
+
+div#maxmin span {
+	position: relative;
+	display: inline-flex;
+	margin: 0;
+	height: auto;
+	width: auto;
+	padding: 4px;
+	color: white;
+	background-color: rgba(0, 134, 179, 0.6);
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+div.ScoreOnBar {
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	width: 0;
+	transition: 1s;
+	
+	top: 0;
+}
+
+div#negative {
+	background-color: rgba(255, 0, 0, 0.8);
+}
+
+div#positive {
+	background-color: rgba(153, 255, 51, 0.8);
+}
+
+
+/*div#ScoreBar:hover div#negative {
+	left: 0;
+	width: 50%;
+}
+
+div#ScoreBar:hover div#positive {
+	width: 50%;
+}*/
+
+
+
+
+
+div#vl {
+	display: block;
+	position: relative;
+	width: 0px;
+	height: 40px;
+	margin: auto;
+	border-left: 3px groove white;
+	border-right: 3px groove white;
+}
+
+
+
+div#vysledekbar {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(0, 134, 179, 0.6);
+	color: white;
+	margin-top: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	text-align: center;
+}
+
+
+
+span#vysledek {
+	display: block;
+	position: relative;
+	width: 80%;
+	height: auto;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 1.3em;
+	margin-bottom: 5px;
+
+}
+
+span#body {
+	display: block;
+	position: relative;
+	width: 80%;
+	height: auto;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+	font-size: 1.3em;
+
+}
+
+div#timer {
+	position: relative;
+	display: block;
+	width: 80%;
+	margin: auto;
+	height: 8px;
+	border: 2px solid white;
+	top: 10px;
+}
+
+div#time {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+}
+
+span#timesleft {
+	position: relative;
+	display: block;
+	width: 85%;
+	padding: 10px;
+	margin: auto;
+}
+
+span#NoTime {
+	font-size: 1.2em;
+	padding: 10px;
+}

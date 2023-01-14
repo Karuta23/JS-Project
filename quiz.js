@@ -1,6 +1,16 @@
 
-            var button1 = document.getElementById('b1');
-            var button2 = document.getElementById('b2');
+            var setPage = document.getElementById('setUpQuestion');
+
+
+            var checkQuestion = document.getElementById('checkQuestion');
+            var nextQuestion = document.getElementById('nextQuestion');
+            var Fin = document.getElementById("Fin");
+            var cover = document.getElementById("questionCover");
+
+            var odpovedNow = '';
+
+
+
             var otazka = 0;
             var skore = 0;
             var maxskore = 0;
@@ -14,12 +24,14 @@
             var A1 = document.getElementById("A1");
             var B1 = document.getElementById("B1");
             var C1 = document.getElementById("C1");
-            var Fin = document.getElementById("Fin");
+
+            var oznaceno = document.getElementById(Aa);
+            var oznacenoRadio = document.getElementById(Aa);
+            
             var vysledek = document.getElementById("vysledek");
             var F = true;
             var Q = document.getElementById("otazka");
             var headerQ = document.getElementById("headerQ");
-            var b2 = document.getElementById("b2");
             var pocetQ = document.getElementById("PocetQ");
             var Nbar = document.getElementById("negative");
             var Pbar = document.getElementById("positive");
@@ -36,6 +48,8 @@
             function Nastaveni() {
 
                 PocetQ = document.getElementById("PocetQ").value;
+                setPage.style.display = "none";
+                
                 if (PocetQ >= 1 && PocetQ <= 20) {
                     maxskore = pocetQ.value;
 
@@ -63,99 +77,60 @@
 
             }
 
+            function setBack(){
+                game.style.display = "none";
+                setPage.style.display = "block";
+                Fin.style.display = "none";
+                restart();
+                vycisti();
+            }
+
+            function nastavAnswer(odpoved){
+                odpovedNow = odpoved;
+                if(odpoved == 'a'){
+                    oznaceno = A1;
+                    oznacenoRadio = Aa;
+                } 
+                if(odpoved == 'b'){
+                    oznaceno = B1;
+                    oznacenoRadio = Ba;
+                }
+                if(odpoved == 'c'){
+                    oznaceno = C1;
+                    oznacenoRadio = Ca;
+                }
+                console.log(odpoved)
+            }
+
             function kontrola() {
-
-
-
-
-                if (Aa.checked) {
-                    if (otazky[otazka].odpoved.a == otazky[otazka].sodpoved) {
-                        A1.style.backgroundColor = "rgba(153, 255, 51, 0.7)";
-                        B1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        C1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
+                if(odpovedNow != null){
+                    if(odpovedNow == otazky[otazka].sodpoved){
+                        A1.style = "background-color: rgba(255, 51, 0, 0.7); opacity: 0.5";
+                        B1.style = "background-color: rgba(255, 51, 0, 0.7); opacity: 0.5";
+                        C1.style = "background-color: rgba(255, 51, 0, 0.7); opacity: 0.5";
+                        oznaceno.style.backgroundColor = "rgba(153, 255, 51, 0.7)";
+                        cover.style = "z-index: 10";
                         skore += bodQ;
-                        button1.style.display = 'none';
-                        button2.style.display = 'block';
-                        A1.style.zIndex = "-1";
-                        B1.style.zIndex = "-1";
-                        C1.style.zIndex = "-1";
+                        checkQuestion.style.display = 'none';
+                        nextQuestion.style.display = 'block';
                         if (PocetQ <= otazka + 1) {
                             if (casovac != null) {
                                 clearInterval(casovac);
-
+    
                             }
                         }
 
                     }
-                    else {
-                        A1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        A1.style.zIndex = "-1";
-                        Aa.style.disabled = "true";
-                        Ba.checked = false;
+                    else{
+                        oznaceno.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
+                        oznacenoRadio.style.disabled = "true";   
+                        oznacenoRadio.checked = false;
+                        oznaceno = null;
+                        odpovedNow = null;
                         bodQ--;
-
                     }
-                }
-
-                if (Ba.checked) {
-                    if (otazky[otazka].odpoved.b == otazky[otazka].sodpoved) {
-
-                        A1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        B1.style.backgroundColor = "rgba(153, 255, 51, 0.7)";
-                        C1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        skore += bodQ;
-                        A1.style.zIndex = "-1";
-                        B1.style.zIndex = "-1";
-                        C1.style.zIndex = "-1";
-
-                        button1.style.display = 'none';
-                        button2.style.display = 'block';
-                        if (PocetQ <= otazka + 1) {
-                            if (casovac != null) {
-                                clearInterval(casovac);
-
-                            }
-                        }
-
-                    }
-                    else {
-                        B1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        B1.style.zIndex = "-1";
-                        Ba.style.disabled = "true";
-                        Ba.checked = false;
-                        bodQ--;
-
-                    }
-                }
-
-                if (Ca.checked) {
-                    if (otazky[otazka].odpoved.c == otazky[otazka].sodpoved) {
-                        A1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        B1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        C1.style.backgroundColor = "rgba(153, 255, 51, 0.7)";
-                        skore += bodQ;
-                        button1.style.display = 'none';
-                        button2.style.display = 'block';
-                        A1.style.zIndex = "-1";
-                        B1.style.zIndex = "-1";
-                        C1.style.zIndex = "-1";
-                        if (PocetQ <= otazka + 1) {
-                            if (casovac != null) {
-                                clearInterval(casovac);
-
-                            }
-                        }
-                    }
-                    else {
-                        C1.style.backgroundColor = "rgba(255, 51, 0, 0.7)";
-                        C1.style.zIndex = "-1";
-                        Ca.style.disabled = "true";
-
-                        Ca.checked = false;
-                        bodQ--;
-
-                    }
-                }
+                }            
+                console.log(otazky[otazka].sodpoved);
             }
 
 
@@ -175,7 +150,7 @@
                 if (otazka + 1 >= PocetQ) {
 
 
-                    b2.innerHTML = "Ukončit kvíz"
+                    nextQuestion.innerHTML = "Ukončit kvíz"
                 }
 
                 if (otazka + 1 > PocetQ) {
@@ -200,8 +175,9 @@
 
                 Poradi.innerHTML = otazka + 1 + "/" + maxskore;
 
-                button1.style.display = 'block';
-                button2.style.display = 'none';
+                cover.style = "z-index: -10";
+                checkQuestion.style.display = 'block';
+                nextQuestion.style.display = 'none';
 
             }
 
@@ -287,12 +263,6 @@
                 Fin.style.opacity = "0";
                 Fin.style.display = "block";
 
-                setTimeout(function F1() {
-                    con.style.width = "35%";
-
-
-                }, 200)
-
                 setTimeout(function F2() {
                     Fin.style.opacity = "1";
                 }, 1000)
@@ -310,25 +280,11 @@
                     vysledek.style.color = "#99ff33";
                 }
 
-
-                if (skore == 1 || skore == -1) {
-                    body.innerHTML = skore + " bod";
-                }
-
-                if ((skore >= 2 && skore <= 4) || (skore <= -2 && skore >= -4)) {
-                    body.innerHTML = skore + " body";
-                }
-
-                if ((skore >= 5 || skore <= -5) || skore == 0) {
-                    body.innerHTML = skore + " bodů";
-                }
+                body.innerHTML = skore + "/" + maxskore;
 
 
                 setTimeout(function F3() {
                     if (skore < 0) {
-
-
-
                         Nbar.style.width = (((skore * (-1)) / maxskore) * 50) + "%";
                         Nbar.style.left = (50 - (((skore * (-1)) / maxskore) * 50)) + "%";
                     }
@@ -340,8 +296,6 @@
 
                 }, 1500)
 
-
-
             }
 
 
@@ -351,21 +305,7 @@
                 maxskore = 0;
                 F = true;
                 Fin.style.display = "none";
-                S.style.opacity = "0";
-                S.style.display = "block";
-
-                setTimeout(function F1() {
-                    con.style.width = "20%";
-                }, 200)
-
-                setTimeout(function F2() {
-                    S.style.opacity = "1";
-                }, 1000)
-
-                Nbar.style.width = "0";
+                Nbar.style.width = "0%";
                 Nbar.style.left = "50%";
-                Pbar.style.width = "0";
-
-
-
+                Pbar.style.width = "0%";
             }

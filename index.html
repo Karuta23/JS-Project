@@ -10,91 +10,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light bg-gradient">
+<body class="bg-light bg-gradient" style="background-image: url(background.gif); background-repeat: no-repeat; background-size: cover;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Kvíz</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link" href="#">Features</a>
-              <a class="nav-link" href="#">Pricing</a>
-              <a class="nav-link disabled">Disabled</a>
-            </div>
-          </div>
         </div>
       </nav>
     <div class="container pt-5 pb-5">
         <h1>Kvíz</h1>
         <p>Vítejte v js aplikaci o kvízu</p>
         <div id="root"></div>
+
         
         <div class="row mb-5">
           <div class="col-3">
-            <a href="" class="okruhy-link">
+            <a href="otazka.html" class="okruhy-link">
               <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
                 <div class="card-body">
-                  Otázky o historii
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o politice
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o historii
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o historii
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o politice
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o historii
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-3">
-            <a href="" class="okruhy-link">
-              <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-                <div class="card-body">
-                  Otázky o historii
+                  Hlavní města
                 </div>
               </div>
             </a>
@@ -102,23 +38,17 @@
         </div>
         
 
-        <p id="test2"></p>
-      
-        <button class="btn btn-dark" onclick="loadA()">AAAAAAAAAAAa</button>
-
     </div>
-
-    <a href="otazka.html">test</a>
 
     <script>
       function loadA(){
-        $.ajax({
-        url: "getOkruhy.php",
+
+      $.ajax({
+        url: "otazkaInsert.php",
         }).done(function(data) {
-          $("#test2").append(data);
+          $("#nabidka").append(data);
         });
       }
-
       
     </script>
 

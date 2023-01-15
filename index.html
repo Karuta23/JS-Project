@@ -11,6 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon.png">
 </head>
 
 <body class="bg-light bg-gradient mh-100" style="min-height: 1000px; position: relative; padding-bottom: 200px;"
@@ -79,90 +80,7 @@
       });
     });
 
-    $.ajax({
-      url: "otázky/okruhy.json",
-    }).done(function (data) {
-      data.forEach(okruh => {
-        $("#nabidka").append(`
-        <div class="col-3 mb-3">
-          <a href="otazka.html?` + okruh.soubor +`" class="okruhy-link">
-            <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-              <div class="card-body">
-                ` + okruh.nazev + `
-              </div>
-            </div>
-          </a>
-        </div>`)
-      });
-    });
 
-    $.ajax({
-      url: "otázky/okruhy.json",
-    }).done(function (data) {
-      data.forEach(okruh => {
-        $("#nabidka").append(`
-        <div class="col-3 mb-3">
-          <a href="otazka.html?` + okruh.soubor +`" class="okruhy-link">
-            <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-              <div class="card-body">
-                ` + okruh.nazev + `
-              </div>
-            </div>
-          </a>
-        </div>`)
-      });
-    });
-
-    $.ajax({
-      url: "otázky/okruhy.json",
-    }).done(function (data) {
-      data.forEach(okruh => {
-        $("#nabidka").append(`
-        <div class="col-3 mb-3">
-          <a href="otazka.html?` + okruh.soubor +`" class="okruhy-link">
-            <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-              <div class="card-body">
-                ` + okruh.nazev + `
-              </div>
-            </div>
-          </a>
-        </div>`)
-      });
-    });
-
-    $.ajax({
-      url: "otázky/okruhy.json",
-    }).done(function (data) {
-      data.forEach(okruh => {
-        $("#nabidka").append(`
-        <div class="col-3 mb-3">
-          <a href="otazka.html?` + okruh.soubor +`" class="okruhy-link">
-            <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-              <div class="card-body">
-                ` + okruh.nazev + `
-              </div>
-            </div>
-          </a>
-        </div>`)
-      });
-    });
-
-    $.ajax({
-      url: "otázky/okruhy.json",
-    }).done(function (data) {
-      data.forEach(okruh => {
-        $("#nabidka").append(`
-        <div class="col-3 mb-3">
-          <a href="otazka.html?` + okruh.soubor +`" class="okruhy-link">
-            <div class="card bg-dark text-light pt-5 pb-5 shadow okruhy">
-              <div class="card-body">
-                ` + okruh.nazev + `
-              </div>
-            </div>
-          </a>
-        </div>`)
-      });
-    });
 
     document.getElementById("stats").innerHTML += "Správně odpovězeno: " + localStorage.getItem("spravneOdpovezeno") + "<br>";
     document.getElementById("stats").innerHTML += "Dohromady otázek: " + localStorage.getItem("celkemOtazek") + "<br>";

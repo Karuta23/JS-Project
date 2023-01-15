@@ -2,6 +2,7 @@
    "udaje": {
       "nazev": "Státní vlajky",
       "typ": "img",
+      "image": "https://wallpaperaccess.com/full/553945.jpg",
       "diff": "Lehký",
       "default": 5
    },
@@ -16,6 +17,61 @@
             "c": "Itálie"
          },
          "sodpoved": "b"
+      },
+      {
+         "typ": "img",
+         "img": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "USA",
+            "b": "Spojené království",
+            "c": "Mexiko"
+         },
+         "sodpoved": "a"
+      },
+      {
+         "typ": "img",
+         "img": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9e/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "Jižní Korea",
+            "b": "Severní Korea",
+            "c": "Japonsko"
+         },
+         "sodpoved": "c"
+      },
+      {
+         "typ": "img",
+         "img": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "Uganda",
+            "b": "Zambie",
+            "c": "Rwanda"
+         },
+         "sodpoved": "a"
+      },
+      {
+         "typ": "img",
+         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Flag_of_Mongolia.svg/2560px-Flag_of_Mongolia.svg.png",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "Uzbekistán",
+            "b": "Mongolsko",
+            "c": "Kyrgyzstán"
+         },
+         "sodpoved": "b"
+      },
+      {
+         "typ": "img",
+         "img": "https://www.worldatlas.com/r/w1200/img/flag/me-flag.jpg",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "Černá Hora",
+            "b": "Albánie",
+            "c": "Severní Makedonie"
+         },
+         "sodpoved": "a"
       }
       
    ]

@@ -1,0 +1,22 @@
+{
+   "udaje": {
+      "nazev": "Státní vlajky",
+      "typ": "img",
+      "diff": "Lehký",
+      "default": 5
+   },
+   "otazky": [
+      {
+         "typ": "img",
+         "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Flag_of_France_%28lighter_variant%29.svg/250px-Flag_of_France_%28lighter_variant%29.svg.png",
+         "Otazka": "Jakého státu vlajka je na obrázku?",
+         "odpoved": {
+            "a": "Španělsko",
+            "b": "Francie",
+            "c": "Itálie"
+         },
+         "sodpoved": "b"
+      }
+      
+   ]
+}

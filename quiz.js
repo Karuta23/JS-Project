@@ -10,10 +10,10 @@
             var odpovedNow = '';
 
 
-
             var otazka = 0;
             var skore = 0;
             var maxskore = 0;
+
             var Aa = document.getElementById("Aa");
             var Ba = document.getElementById("Ba");
             var Ca = document.getElementById("Ca");
@@ -29,12 +29,11 @@
             var oznacenoRadio = document.getElementById(Aa);
             
             var vysledek = document.getElementById("vysledek");
-            var F = true;
             var Q = document.getElementById("otazka");
+            var IMG = document.getElementById("image");
             var headerQ = document.getElementById("headerQ");
             var pocetQ = document.getElementById("PocetQ");
-            var Nbar = document.getElementById("negative");
-            var Pbar = document.getElementById("positive");
+            
             var body = document.getElementById("body");
             var Question = document.getElementById("Question");
             var bodQ = 1;
@@ -44,36 +43,46 @@
 
             var game = document.getElementById("quiz");
 
+            pocetOtazek = defaultQs;
 
-            function Nastaveni() {
-
-                PocetQ = document.getElementById("PocetQ").value;
-                setPage.style.display = "none";
+            function Nastaveni(mod) {
                 
-                if (PocetQ >= 1 && PocetQ <= 20) {
-                    maxskore = pocetQ.value;
-
+                if (pocetQ.value >= 1 && pocetQ.value <= otazky.length) {
+                     
+                    if(mod=='s'){
+                    
+                        pocetOtazek = pocetQ.value;
+                        maxskore = pocetOtazek;  
+                    }
+                    if(mod=='n'){
+                        pocetOtazek = defaultQs;
+                        maxskore = pocetOtazek; 
+                    }
+    
+                    setPage.style.display = "none";
                     dalsi();
                     Question.style.opacity = "0";
                     headerQ.style.opacity = "0";
                     NastavCas();
                     setTimeout(function F3() {
-                        NoTime.style.display = "none";
+                            NoTime.style.display = "none";
                     }, 100)
-
-                    otazky = nastavotazky("Hlavní města");
+        
                     setTimeout(function F1() {
-                        headerQ.style.display = "block";
-                        Question.style.display = "block";
+                            headerQ.style.display = "block";
+                            Question.style.display = "block";
                     }, 1200)
-
+        
                     setTimeout(function F2() {
                         Question.style.opacity = "1";
                         headerQ.style.opacity = "1";
                     }, 2000)
-
+        
                     game.style.display = "block";
                 }
+
+                
+                
 
             }
 
@@ -99,7 +108,6 @@
                     oznaceno = C1;
                     oznacenoRadio = Ca;
                 }
-                console.log(odpoved)
             }
 
             function kontrola() {
@@ -113,12 +121,14 @@
                         skore += bodQ;
                         checkQuestion.style.display = 'none';
                         nextQuestion.style.display = 'block';
+                        otazka++;
                         if (PocetQ <= otazka + 1) {
                             if (casovac != null) {
                                 clearInterval(casovac);
     
                             }
                         }
+                        
 
                     }
                     else{
@@ -130,7 +140,6 @@
                         bodQ--;
                     }
                 }            
-                console.log(otazky[otazka].sodpoved);
             }
 
 
@@ -140,29 +149,32 @@
                 vycisti();
                 bodQ = 1;
 
-                if (F) {
-                    F = false;
-                }
-                else {
-                    otazka++;
-                }
-
-                if (otazka + 1 >= PocetQ) {
+                if (otazka + 1 >= pocetOtazek) {
 
 
                     nextQuestion.innerHTML = "Ukončit kvíz"
                 }
 
-                if (otazka + 1 > PocetQ) {
+                if (otazka + 1 > pocetOtazek) {
 
                     Ukonci();
                 }
+
+                
 
                 setTimeout(function F1() {
                     A.innerHTML = otazky[otazka].odpoved.a;
                     B.innerHTML = otazky[otazka].odpoved.b;
                     C.innerHTML = otazky[otazka].odpoved.c;
-                    Q.innerHTML = otazky[otazka].Otazka;
+                    if(otazky[otazka].typ == "text"){
+                        Q.innerHTML = otazky[otazka].Otazka;
+                        IMG.style = "display: none";
+                    }
+                    else{
+                        IMG.style = "display: block";
+                        IMG.src = otazky[otazka].img;
+                    }
+                    
                 }, 500)
 
 
@@ -220,7 +232,7 @@
             function NastavCas() {
 
 
-                var celkovycas = PocetQ * 100;
+                var celkovycas = pocetOtazek * 100;
                 var zc = celkovycas;
                 casovac = setInterval(function F1() {
 
@@ -241,7 +253,7 @@
                         clearInterval(casovac);
                     }
 
-                    if (otazka == PocetQ) {
+                    if (otazka >= pocetOtazek) {
 
                         clearInterval(casovac);
                     }
@@ -263,6 +275,9 @@
                 Fin.style.opacity = "0";
                 Fin.style.display = "block";
 
+                var Nbar = document.getElementById("negative");
+                var Pbar = document.getElementById("positive");
+
                 setTimeout(function F2() {
                     Fin.style.opacity = "1";
                 }, 1000)
@@ -281,6 +296,16 @@
                 }
 
                 body.innerHTML = skore + "/" + maxskore;
+
+
+                totalS = parseInt(localStorage.spravneOdpovezeno) + parseInt(skore);
+                totalQ = parseInt(localStorage.celkemOtazek) + parseInt(maxskore);
+                
+
+                localStorage.spravneOdpovezeno = totalS;
+                localStorage.celkemOtazek = totalQ;
+
+
 
 
                 setTimeout(function F3() {
